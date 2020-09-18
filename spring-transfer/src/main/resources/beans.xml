@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- 跟标签beans，⾥⾯配置⼀个⼜⼀个的bean⼦标签，每⼀个bean⼦标签都代表⼀个类的配置 -->
+<beans>
+    <!--id标识对象，class是类的全限定类名-->
+    <bean id="accountDao"
+          class="com.ccarlos.edu.dao.impl.JdbcAccountDaoImpl">
+        <property name="ConnectionUtils" ref="connectionUtils"/>
+    </bean>
+
+    <bean id="transferService" class="com.ccarlos.edu.service.impl.TransferServiceImpl">
+        <!--set+ name 之后锁定到传值的set⽅法了，通过反射技术可以调⽤该⽅法传⼊对应的值-->
+        <property name="AccountDao" ref="accountDao"></property>
+    </bean>
+
+    <!--配置新增的三个Bean-->
+    <bean id="connectionUtils"
+          class="com.ccarlos.edu.utils.ConnectionUtils"></bean>
+
+    <!--事务管理器-->
+    <bean id="transactionManager"
+          class="com.ccarlos.edu.utils.TransactionManager">
+        <property name="ConnectionUtils" ref="connectionUtils"/>
+    </bean>
+
+    <!--代理对象⼯⼚-->
+    <bean id="proxyFactory" class="com.ccarlos.edu.factory.ProxyFactory">
+        <property name="TransactionManager" ref="transactionManager"/>
+    </bean>
+
+
+</beans>
