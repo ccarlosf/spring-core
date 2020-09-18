@@ -1,4 +1,5 @@
 import com.ccarlos.edu.dao.AccountDao;
+import com.ccarlos.edu.pojo.Account;
 import org.junit.Test;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -19,16 +20,16 @@ public class IoCTest {
         // 第一次getBean该对象
 //        Object accountPojo = applicationContext.getBean("accountPojo");
 
-//        AccountDao accountDao = (AccountDao) applicationContext.getBean("accountDao");
-//
-//        accountDao.queryAccountByCardNo("1111111");
-//        System.out.println("accountDao：" + accountDao);
+        AccountDao accountDao = (AccountDao) applicationContext.getBean("accountDao");
+
+        Account account = accountDao.queryAccountByCardNo("1111111");
+        System.out.println("accountDao：" + account.toString());
 //        AccountDao accountDao1 = (AccountDao) applicationContext.getBean("accountDao");
 //        System.out.println("accountDao1：" + accountDao1);
 
 
-        Object connectionUtils = applicationContext.getBean("connectionUtils");
-        System.out.println(connectionUtils);
+//        Object connectionUtils = applicationContext.getBean("connectionUtils");
+//        System.out.println(connectionUtils);
 
         applicationContext.close();
 

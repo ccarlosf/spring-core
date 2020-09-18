@@ -39,8 +39,6 @@ public class JdbcAccountDaoImpl implements AccountDao {
     }
 
 
-
-
     public JdbcAccountDaoImpl(ConnectionUtils connectionUtils, String name, int sex, float money) {
         this.connectionUtils = connectionUtils;
         this.name = name;
