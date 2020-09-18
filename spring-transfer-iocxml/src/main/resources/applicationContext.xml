@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--跟标签beans，里面配置一个又一个的bean子标签，每一个bean子标签都代表一个类的配置-->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+ https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <!--Spring ioc 实例化Bean的三种方式-->
+    <!--方式一：使用无参构造器（推荐）-->
+    <bean id="connectionUtils" class="com.ccarlos.edu.utils.ConnectionUtils"></bean>
+
+    <!--另外两种方式是为了我们自己new的对象加入到SpringIOC容器管理-->
+    <!--方式二：静态方法-->
+<!--
+    <bean id="connectionUtils" class="com.ccarlos.edu.factory.CreateBeanFactory" factory-method="getInstanceStatic"/>
+-->
+    <!--方式三：实例化方法-->
+<!--
+    <bean id="createBeanFactory" class="com.ccarlos.edu.factory.CreateBeanFactory"></bean>
+    <bean id="connectionUtils" factory-bean="createBeanFactory" factory-method="getInstance"/>
+-->
+
+</beans>
