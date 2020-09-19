@@ -1,8 +1,10 @@
-package com.ccarlos.edu.dao;
+package com.lagou.edu.dao;
 
+import com.lagou.edu.pojo.Account;
 
-import com.ccarlos.edu.pojo.Account;
-
+/**
+ * @author 应癫
+ */
 public interface AccountDao {
 
     Account queryAccountByCardNo(String cardNo) throws Exception;

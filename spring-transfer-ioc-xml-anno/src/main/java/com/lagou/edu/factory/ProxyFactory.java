@@ -1,37 +1,32 @@
-package com.ccarlos.edu.factory;
+package com.lagou.edu.factory;
 
-import com.ccarlos.edu.utils.TransactionManager;
-import org.springframework.cglib.proxy.Enhancer;
-import org.springframework.cglib.proxy.MethodInterceptor;
-import org.springframework.cglib.proxy.MethodProxy;
+import com.lagou.edu.pojo.Account;
+import com.lagou.edu.utils.TransactionManager;
+import net.sf.cglib.proxy.Enhancer;
+import net.sf.cglib.proxy.MethodInterceptor;
+import net.sf.cglib.proxy.MethodProxy;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
 
 /**
+ * @author 应癫
+ *
  *
  * 代理对象工厂：生成代理对象的
  */
 
+
+@Component("proxyFactory")
 public class ProxyFactory {
 
 
+    @Autowired
     private TransactionManager transactionManager;
 
-    public void setTransactionManager(TransactionManager transactionManager) {
-        this.transactionManager = transactionManager;
-    }
-
-    /*private ProxyFactory(){
-
-    }
-
-    private static ProxyFactory proxyFactory = new ProxyFactory();
-
-    public static ProxyFactory getInstance() {
-        return proxyFactory;
-    }*/
 
 
 

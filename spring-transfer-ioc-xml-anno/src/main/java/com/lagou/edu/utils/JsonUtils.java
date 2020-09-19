@@ -1,10 +1,11 @@
-package com.ccarlos.edu.utils;
+package com.lagou.edu.utils;
+
+import java.util.List;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JavaType;
 import com.fasterxml.jackson.databind.ObjectMapper;
-
-import java.util.List;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
 
 /**
  * JSON工具类（使用的是jackson实现的）

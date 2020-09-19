@@ -13,7 +13,7 @@
 ">
 
     <!--开启注解扫描，base-package指定扫描的包路径-->
-    <context:component-scan base-package="com.ccarlos.edu"/>
+    <context:component-scan base-package="com.lagou.edu"/>
 
     <!--引入外部资源文件-->
     <context:property-placeholder location="classpath:jdbc.properties"/>
@@ -30,7 +30,7 @@
     <!--
         lazy-init：延迟加载，true代表延迟，false代表立即加载，默认是false
     -->
-    <bean id="lazyResult" class="com.ccarlos.edu.pojo.Result"  init-method="initMethod"/>
+    <bean id="lazyResult" class="com.lagou.edu.pojo.Result"   init-method="initMethod"/>
 
 
 

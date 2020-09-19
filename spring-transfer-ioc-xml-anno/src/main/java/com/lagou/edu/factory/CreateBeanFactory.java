@@ -1,8 +1,10 @@
-package com.ccarlos.edu.factory;
+package com.lagou.edu.factory;
 
+import com.lagou.edu.utils.ConnectionUtils;
 
-import com.ccarlos.edu.utils.ConnectionUtils;
-
+/**
+ * @author 应癫
+ */
 public class CreateBeanFactory {
 
 

@@ -1,4 +1,4 @@
-package com.ccarlos.edu.pojo;
+package com.lagou.edu.pojo;
 
 /**
  * @author 应癫
