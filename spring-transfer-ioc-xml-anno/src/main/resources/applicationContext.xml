@@ -67,16 +67,27 @@
      第四步：使⽤对应的标签配置通知的类型
      ⼊门案例采⽤前置通知，标签为aop:before-->
     <!--把通知bean交给spring来管理-->
-    <bean id="logUtil" class="com.lagou.edu.utils.LogUtils"></bean>
-    <!--开始aop的配置-->
+ <!--   <bean id="logUtil" class="com.lagou.edu.utils.LogUtils"></bean>
+    &lt;!&ndash;开始aop的配置&ndash;&gt;
     <aop:config>
-        <!--配置切⾯-->
+        &lt;!&ndash;配置切⾯&ndash;&gt;
         <aop:aspect id="logAdvice" ref="logUtil">
-            <!--配置前置通知-->
+            &lt;!&ndash;配置前置通知&ndash;&gt;
             <aop:before method="printLog" pointcut="execution(public *
 com.lagou.edu.service.impl.TransferServiceImpl.transfer(..))"></aop:before>
         </aop:aspect>
-    </aop:config>
+    </aop:config>-->
+
+<!--    <bean id="logUtil" class="com.lagou.edu.utils.LogUtils"></bean>
+    &lt;!&ndash;开始aop的配置&ndash;&gt;
+    <aop:config>
+        &lt;!&ndash;配置切⾯&ndash;&gt;
+        <aop:aspect id="logAdvice" ref="logUtil">
+            <aop:pointcut id="pt1" expression="execution(* com.lagou.edu.service.impl.TransferServiceImpl.*(..))"/>
+            &lt;!&ndash;配置前置通知&ndash;&gt;
+            <aop:before method="printLog" pointcut-ref="pt1"></aop:before>
+        </aop:aspect>
+    </aop:config>-->
 
 
     <!--开启aop注解驱动
