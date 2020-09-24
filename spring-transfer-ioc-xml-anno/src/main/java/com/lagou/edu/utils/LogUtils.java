@@ -81,4 +81,8 @@ public class LogUtils {
         return result;
     }
 
+    public void printLog(){
+        System.out.println("printLog");
+    }
+
 }

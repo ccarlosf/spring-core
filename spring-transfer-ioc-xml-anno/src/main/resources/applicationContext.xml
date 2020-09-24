@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans  xmlns="http://www.springframework.org/schema/beans"
-        xmlns:context="http://www.springframework.org/schema/context"
-        xmlns:aop="http://www.springframework.org/schema/aop"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
         http://www.springframework.org/schema/beans
         https://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/context
@@ -30,9 +30,7 @@
     <!--
         lazy-init：延迟加载，true代表延迟，false代表立即加载，默认是false
     -->
-    <bean id="lazyResult" class="com.lagou.edu.pojo.Result"   init-method="initMethod"/>
-
-
+    <bean id="lazyResult" class="com.lagou.edu.pojo.Result" init-method="initMethod"/>
 
 
     <!--进行aop相关的xml配置,配置aop的过程其实就是把aop相关术语落地-->
@@ -62,8 +60,23 @@
         </aop:aspect>
     </aop:config>-->
 
-
-
+    <!-- Spring基于XML的AOP配置步骤：
+     第⼀步：把通知Bean交给Spring管理
+     第⼆步：使⽤aop:config开始aop的配置
+     第三步：使⽤aop:aspect配置切⾯
+     第四步：使⽤对应的标签配置通知的类型
+     ⼊门案例采⽤前置通知，标签为aop:before-->
+    <!--把通知bean交给spring来管理-->
+    <bean id="logUtil" class="com.lagou.edu.utils.LogUtils"></bean>
+    <!--开始aop的配置-->
+    <aop:config>
+        <!--配置切⾯-->
+        <aop:aspect id="logAdvice" ref="logUtil">
+            <!--配置前置通知-->
+            <aop:before method="printLog" pointcut="execution(public *
+com.lagou.edu.service.impl.TransferServiceImpl.transfer(..))"></aop:before>
+        </aop:aspect>
+    </aop:config>
 
 
     <!--开启aop注解驱动
@@ -71,7 +84,6 @@
 
     -->
     <aop:aspectj-autoproxy/>
-
 
 
 </beans>
