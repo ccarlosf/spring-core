@@ -10,6 +10,7 @@
         <module>demo-ioc-aop</module>
         <module>spring-transfer</module>
         <module>spring-transfer-iocxml</module>
+        <module>spring-transfer-transaction</module>
     </modules>
     <name>spring-core</name>
     <description>spring-core project for Spring Boot</description>
