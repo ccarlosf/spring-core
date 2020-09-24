@@ -94,7 +94,9 @@ com.lagou.edu.service.impl.TransferServiceImpl.transfer(..))"></aop:before>
         proxy-target-class:true强制使用cglib
 
     -->
+<!--
     <aop:aspectj-autoproxy/>
+-->
 
 
 </beans>

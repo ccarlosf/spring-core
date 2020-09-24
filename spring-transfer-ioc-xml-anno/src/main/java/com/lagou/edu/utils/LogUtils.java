@@ -3,6 +3,7 @@ package com.lagou.edu.utils;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.*;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.stereotype.Component;
 
 /**
@@ -10,6 +11,7 @@ import org.springframework.stereotype.Component;
  */
 @Component
 @Aspect
+@EnableAspectJAutoProxy //开启spring对注解AOP的⽀持
 public class LogUtils {
 
 
